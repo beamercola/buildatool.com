@@ -10,24 +10,7 @@ const Quiz = () => {
 
   return (
     <div className="p-8 bg-teal-700 rounded-lg text-white text-center">
-      {answered ? (
-        <form name="home-quiz" method="POST" netlify>
-          <h1 className="text-2xl mb-4">Great Job!</h1>
-          <input
-            className="rounded-l px-3 py-1 text-xl text-black"
-            type="email"
-            placeholder="Email Address"
-            name="email"
-          />
-          <input type="hidden" value={answered} name="answer" />
-          <button
-            className="bg-teal-900 text-xl py-1 px-3 rounded-r"
-            type="submit"
-          >
-            Submit
-          </button>
-        </form>
-      ) : (
+      {!answered && (
         <>
           <h3 className="text-lg mb-4">{steps.title}</h3>
           {steps.options.map(option => (
@@ -40,6 +23,27 @@ const Quiz = () => {
           ))}
         </>
       )}
+      <form
+        className={!answered && "hidden"}
+        name="home-quiz"
+        method="POST"
+        netlify
+      >
+        <h1 className="text-2xl mb-4">Great Job!</h1>
+        <input
+          className="rounded-l px-3 py-1 text-xl text-black"
+          type="email"
+          placeholder="Email Address"
+          name="email"
+        />
+        <input type="hidden" value={answered} name="answer" />
+        <button
+          className="bg-teal-900 text-xl py-1 px-3 rounded-r"
+          type="submit"
+        >
+          Submit
+        </button>
+      </form>
     </div>
   )
 }
