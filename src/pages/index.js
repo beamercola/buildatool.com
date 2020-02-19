@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Quiz from "../components/Quiz"
 
 const IndexPage = () => (
   <Layout>
@@ -36,11 +37,12 @@ const IndexPage = () => (
       <div className="text-center p-8 px-24">
         <div className="max-w-md mx-auto">
           <h3 className="text-4xl">Is Hot Yoga Right For You</h3>
-          <p className="">
+          <p className="mb-8">
             Answer these few questions to learn more about our type of yoga. Who
             knows, there might be something special waiting for you at the
             end...
           </p>
+          <Quiz />
         </div>
       </div>
     </div>
