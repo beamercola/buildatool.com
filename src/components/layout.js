@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
     <>
       <Header />
       <main className="container">{children}</main>
-      <footer className="container mt-12">
+      <footer className="container py-12">
         © {new Date().getFullYear()}, build a tool
       </footer>
     </>
