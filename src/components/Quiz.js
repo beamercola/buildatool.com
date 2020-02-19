@@ -37,6 +37,7 @@ const Quiz = () => {
           name="email"
         />
         <input type="hidden" value={answered} name="answer" />
+        <input type="hidden" name="form-name" value="home-quiz" />
         <button
           className="bg-teal-900 text-xl py-1 px-3 rounded-r"
           type="submit"
